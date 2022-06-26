@@ -73,6 +73,15 @@
     <Compile Include="AdminFolder\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TeacherFolder\AddStatmentWindow.xaml.cs">
+      <DependentUpon>AddStatmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherFolder\EditStatment.xaml.cs">
+      <DependentUpon>EditStatment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherFolder\TeacherWindow.xaml.cs">
+      <DependentUpon>TeacherWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowsFolder\AutorisationWindow.xaml.cs">
       <DependentUpon>AutorisationWindow.xaml</DependentUpon>
     </Compile>
@@ -92,6 +101,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminFolder\EditUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherFolder\AddStatmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherFolder\EditStatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherFolder\TeacherWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Colledge.AdminFolder;
 using Colledge;
+using Colledge.TeacherFolder;
 
 namespace Colledge.WindowsFolder
 {
@@ -66,10 +67,7 @@ namespace Colledge.WindowsFolder
                                 new AdminWindow().ShowDialog();
                                 break;
                             case "2":
-                                 MBClass.ErrorMb("goo");
-                                 break;
-                             case "3":
-                                 MBClass.InfoMb("All Corect");
+                                 new TeacherWindow().ShowDialog();
                                  break;
                          }
                         

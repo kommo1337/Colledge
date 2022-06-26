@@ -12,8 +12,8 @@ namespace Colledge
 {
     internal class CBClass
     {
-        SqlConnection SqlConnection = new SqlConnection(@"Data Source=K306PC10\SQLEXPRESS;
-                                                        Initial Catalog=UP02Talalaev;
+        SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-QFAG2BJ\SQLEXPRESS;
+                                                        Initial Catalog=Colledge;
                                                         Integrated Security=True");
         SqlDataAdapter sqlData;
         DataSet dataSet;
@@ -22,16 +22,16 @@ namespace Colledge
             try
             {
                 SqlConnection.Open();
-                sqlData = new SqlDataAdapter("Select RoleID, RoleName " +
-                    "From dbo.[Role] Order by RoleID ASC",
+                sqlData = new SqlDataAdapter("Select * " +
+                    "From dbo.[Rolee]",
                     SqlConnection);
                 dataSet = new DataSet();
-                sqlData.Fill(dataSet, "[Role]");
-                comboBox.ItemsSource = dataSet.Tables["[Role]"].DefaultView;
+                sqlData.Fill(dataSet, "[Rolee]");
+                comboBox.ItemsSource = dataSet.Tables["[Rolee]"].DefaultView;
                 comboBox.DisplayMemberPath = dataSet.
-                    Tables["[Role]"].Columns["RoleName"].ToString();
+                    Tables["[Rolee]"].Columns["RoleName"].ToString();
                 comboBox.SelectedValuePath = dataSet.
-                   Tables["[Role]"].Columns["RoleID"].ToString();
+                   Tables["[Rolee]"].Columns["[№ p/p]"].ToString();
             }
             catch (Exception ex)
             {

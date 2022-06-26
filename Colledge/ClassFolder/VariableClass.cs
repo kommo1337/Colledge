@@ -10,5 +10,6 @@ namespace Colledge.ClassFolder
     {
         public static string UserId { get; set; }
         public static string CustomerId { get; set; }
+        public static string Statment { get; set; }
     }
 }
