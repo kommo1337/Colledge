@@ -19,21 +19,33 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
         <Label 
@@ -43,22 +55,58 @@
                Content="Имя Дисциплины" Grid.Column="1" Grid.Row="3"/>
         <TextBox x:Name="Discipline" Grid.Row="3" Grid.Column="2"/>
         <Label 
-               Content="Имя Студента" Grid.Column="1" Grid.Row="7"/>
-        <TextBox x:Name="NameStudent" Grid.Row="3" Grid.Column="2"/>
+               Content="Отчество Студента" Grid.Column="1" Grid.Row="9"/>
+        <TextBox x:Name="TherdStudent" Grid.Row="3" Grid.Column="2"/>
         <Label 
-               Content="Фамилия Студента" Grid.Column="1" Grid.Row="5"/>
+               Content="Фамилия Студента" Grid.Column="1" Grid.Row="7"/>
         <TextBox x:Name="SurnameStudent" 
+                 Grid.Row="9" Grid.Column="2"/>
+        <Label 
+               Content="Имя Студента" Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="NameStudent" 
                  Grid.Row="5" Grid.Column="2"/>
-       
+        <Label 
+               Content="Фамилия Преподователя" Grid.Column="1" Grid.Row="11"/>
+        <TextBox x:Name="SurnamePrepod" 
+                 Grid.Row="11" Grid.Column="2"/>
+        <Label 
+               Content="Отчество Преподователя" Grid.Column="1" Grid.Row="15"/>
+        <TextBox x:Name="TherdNamePrepod" 
+                 Grid.Row="15" Grid.Column="2"/>
+        <Label 
+               Content="Имя Преподователя" Grid.Column="1" Grid.Row="13"/>
+        <TextBox x:Name="NamePrepod" 
+                 Grid.Row="13" Grid.Column="2"/>
+        <Label 
+               Content="Дата Сдачи" Grid.Column="1" Grid.Row="17"/>
+        <TextBox x:Name="PassDate" 
+                 Grid.Row="17" Grid.Column="2"/>
+        <Label 
+               Content="Год" Grid.Column="1" Grid.Row="19"/>
+        <TextBox x:Name="Date" 
+                 Grid.Row="19" Grid.Column="2"/>
+        <Label 
+               Content="Семестр" Grid.Column="1" Grid.Row="21"/>
+        <TextBox x:Name="Semestr" 
+                 Grid.Row="21" Grid.Column="2"/>
+        <Label 
+               Content="Группа" Grid.Column="1" Grid.Row="23"/>
+        <TextBox x:Name="Group" 
+                 Grid.Row="23" Grid.Column="2"/>
+        <Label 
+               Content="Оценка" Grid.Column="1" Grid.Row="25"/>
+        <TextBox x:Name="Grade" 
+                 Grid.Row="25" Grid.Column="2"/>
+
         <Button x:Name="AddBtn" Content="Добавить пользователя" 
-                Grid.Column="1" Grid.Row="13"
+                Grid.Column="1" Grid.Row="27"
                 Grid.ColumnSpan="2"
-                Click="AddBtn_Click"/>
+                Click="AddBtn_Click" Margin="0,10,0,-10"/>
         <Button x:Name="ExitBtn" Content="Выйти" 
-                Grid.Column="1" Grid.Row="14"
-                Click="ExitBtn_Click"/>
+                Grid.Column="1" Grid.Row="27"
+                Click="ExitBtn_Click" Margin="0,45,0,-45"/>
         <Button x:Name="BackBtn" Content="Назад" 
-                Grid.Column="2" Grid.Row="14"
-                Click="BackBtn_Click"/>
+                Grid.Column="2" Grid.Row="27"
+                Click="BackBtn_Click" Margin="0,45,0,-45"/>
     </Grid>
 </Window>
