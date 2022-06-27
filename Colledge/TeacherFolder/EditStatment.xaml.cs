@@ -40,7 +40,7 @@ namespace Colledge.TeacherFolder
                 SqlCommand =
                     new SqlCommand("Update " +
                     "dbo.[statment] " +
-                    $"Set [Name of Discipline] ='{Descipline.Text}'," +
+                    $"Set [Name of Discipline] ='{Discipline.Text}'," +
                     $"[Name of Student]='{NameStudent.Text}'," +
                     $"Where IDUser='{VariableClass.Statment}'",
                     sqlConnection);
@@ -68,7 +68,7 @@ namespace Colledge.TeacherFolder
                     sqlConnection);
                 dataReader = SqlCommand.ExecuteReader();
                 dataReader.Read();
-                Descipline.Text = dataReader[1].ToString();
+                Discipline.Text = dataReader[1].ToString();
                 NameStudent.Text = dataReader[2].ToString();
             }
             catch (Exception ex)
