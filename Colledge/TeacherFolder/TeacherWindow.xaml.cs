@@ -34,7 +34,7 @@ namespace Colledge.TeacherFolder
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             dGClass.LoadDG("Select * From dbo.[statment] " +
-                $"Where Login Like '%{SearchTb.Text}%' ");
+                $"Where Name of Discipline Like '%{SearchTb.Text}%' ");
         }
 
         private void AddIm_Click(object sender, RoutedEventArgs e)

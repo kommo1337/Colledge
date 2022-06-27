@@ -52,10 +52,20 @@ namespace Colledge.TeacherFolder
                 {
                     sqlConnection.Open();
                     SqlCommand = new SqlCommand($"Insert Into dbo.[statment] " +
-                        "(Discipline,NameStudent,SurnameStudent) " +
+                        "(Discipline,NameStudent,SurnameStudent,Semestr,PassDate,NamePrepod,Grade,Group,SurnamePrepod,TherdStudent,TherdNamePrepod,Date) " +
                         $"Values ('{SurnameStudent.Text}'," +
                         $"'{Discipline.Text}'," +
                         $"'{NameStudent.Text}'," +
+                        $"'{SurnameStudent.Text}'," +
+                        $"'{Semestr.Text}'," +
+                        $"'{PassDate.Text}'," +
+                        $"'{NamePrepod.Text}'," +
+                        $"'{Grade.Text}'," +
+                        $"'{Group.Text}'," +
+                        $"'{SurnamePrepod.Text}'," +
+                        $"'{TherdStudent.Text}'," +
+                        $"'{TherdNamePrepod.Text}'," +
+                        $"'{Date.Text}'," +
                         sqlConnection);
                     SqlCommand.ExecuteNonQuery();
                     MBClass.InfoMb("Успешно");

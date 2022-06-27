@@ -42,6 +42,16 @@ namespace Colledge.TeacherFolder
                     "dbo.[statment] " +
                     $"Set [Name of Discipline] ='{Discipline.Text}'," +
                     $"[Name of Student]='{NameStudent.Text}'," +
+                    $"[Second Name]='{SurnameStudent.Text}'," +
+                    $"[Therd Name]='{TherdStudent.Text}'," +
+                    $"[Name of Teacher]='{NamePrepod.Text}'," +
+                    $"[Second Name Teacher]='{SurnamePrepod.Text}'," +
+                    $"[Therd Name Teache]='{TherdNamePrepod.Text}'," +
+                    $"[Date Of The Pass]='{PassDate.Text}'," +
+                    $"[Year]='{Date.Text}'," +
+                    $"[Semestr]='{Semestr.Text}'," +
+                    $"[Group]='{Group.Text}'," +
+                    $"[Grade]='{Grade.Text}'," +
                     $"Where IDUser='{VariableClass.Statment}'",
                     sqlConnection);
                 SqlCommand.ExecuteNonQuery();
