@@ -39,16 +39,14 @@ namespace Colledge.TeacherFolder
                 sqlConnection.Open();
                 SqlCommand =
                     new SqlCommand("Update " +
-                    "dbo.[TrueUser] " +
-                    $"Set [Login] ='{LoginTb.Text}'," +
-                    $"[Password]='{PasswordTb.Text}'," +
-                    $"RoleId='{RoleCb.SelectedValue.ToString()}' " +
+                    "dbo.[statment] " +
+                    $"Set [Name of Discipline] ='{Descipline.Text}'," +
+                    $"[Name of Student]='{NameStudent.Text}'," +
                     $"Where IDUser='{VariableClass.Statment}'",
                     sqlConnection);
                 SqlCommand.ExecuteNonQuery();
-                MBClass.InfoMb($"Данные пользователя " +
-                    $"{LoginTb.Text}" +
-                    $"успешно отредактированы");
+                MBClass.InfoMb("Sucsess");                   
+                    
             }
             catch (Exception ex)
             {
@@ -62,18 +60,16 @@ namespace Colledge.TeacherFolder
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            cB.RoleCBLoad(RoleCb);
             try
             {
                 sqlConnection.Open();
-                SqlCommand = new SqlCommand("Select * from dbo.[TrueUser] " +
-                    $"Where IDUser='{VariableClass.UserId}'",
+                SqlCommand = new SqlCommand("Select * from dbo.[statment] " +
+                    $"Where IDUser='{VariableClass.Statment}'",
                     sqlConnection);
                 dataReader = SqlCommand.ExecuteReader();
                 dataReader.Read();
-                LoginTb.Text = dataReader[1].ToString();
-                PasswordTb.Text = dataReader[2].ToString();
-                RoleCb.SelectedValue = dataReader[5].ToString();
+                Descipline.Text = dataReader[1].ToString();
+                NameStudent.Text = dataReader[2].ToString();
             }
             catch (Exception ex)
             {

@@ -37,19 +37,17 @@
         </Grid.RowDefinitions>
 
         <Label 
-               Content="Редактирование пользователя" 
+               Content="Редактирование Ведомости" 
                Grid.Column="2" Grid.Row="1"/>
         <Label 
-               Content="Логин" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="LoginTb" Grid.Row="3" Grid.Column="2"/>
+               Content="Дисциплина" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="Descipline" Grid.Row="3" Grid.Column="2"/>
         <Label 
-               Content="Пароль" Grid.Column="1" Grid.Row="5"/>
-        <TextBox x:Name="PasswordTb" 
+               Content="Имя Студента" Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="NameStudent" 
                  Grid.Row="5" Grid.Column="2"/>
-        <Label 
-               Content="Роль" Grid.Column="1" Grid.Row="11"/>
-        <ComboBox x:Name="RoleCb" 
-                  Grid.Column="2" Grid.Row="11"/>
+         
+                  
         <Button x:Name="EditBtn" Content="Сохранить пользователя" 
                 Grid.Column="1" Grid.Row="13"
                 Grid.ColumnSpan="2"

@@ -48,12 +48,12 @@ namespace Colledge.WindowsFolder
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand = new SqlCommand(@"Select Count(*) From dbo.TrueUser Where Login = " + $"'{LoginTb.Text}' and Password = " + $"'{ PasswordPsb.Password}'");
+                    SqlCommand = new SqlCommand(@"Select * From dbo.TrueUser Where Login = " + $"'{LoginTb.Text}' and Password = " + $"'{ PasswordPsb.Password}'");
                     SqlCommand.Connection = sqlConnection;
                     //dataReader = SqlCommand.ExecuteReader();
                     //dataReader.Read();
-                    var n = SqlCommand.ExecuteScalar();
-                    if ((int)n == 0)
+                    var n = SqlCommand.ExecuteReader();
+                    if (!n.HasRows)
                     {
                         MBClass.ErrorMb("Введеный пароль не коректен");
                         PasswordPsb.Focus();
@@ -61,17 +61,18 @@ namespace Colledge.WindowsFolder
                     }
                     else
                     {
-                         switch (n.ToString())
+                        n.Read();
+                        switch (n[3])
                          {
-                            case "1":
+                            case 2:
                                 new AdminWindow().ShowDialog();
+                                Close();
                                 break;
-                            case "2":
+                            case 1:
                                  new TeacherWindow().ShowDialog();
+                                Close();
                                  break;
                          }
-                        
-                        MBClass.InfoMb("All Corect");
                     }
                     sqlConnection.Close();
 

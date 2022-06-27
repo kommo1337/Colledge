@@ -89,7 +89,7 @@ namespace Colledge.WindowsFolder
                             sqlConnection.Open();
                             sqlCommand = new SqlCommand("Insert Into TrueUser " +
                                 "(Login,Password, IDRole) Values " +
-                                $"('{LoginTb.Text}','{PasswordPsb.Password}',2)",
+                                $"('{LoginTb.Text}','{PasswordPsb.Password}',{(Preod.IsChecked==true?1:2)})",
                                 sqlConnection);
                             sqlCommand.ExecuteNonQuery();
                             MBClass.InfoMb("Пользователь зарегистрирован");

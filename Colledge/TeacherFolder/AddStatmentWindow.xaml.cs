@@ -20,7 +20,7 @@ namespace Colledge.TeacherFolder
     /// </summary>
     public partial class AddStatmentWindow : Window
     {
-        CBClass cB;
+        
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-QFAG2BJ\SQLEXPRESS;
                                                         Initial Catalog=Colledge;
                                                         Integrated Security=True");
@@ -28,15 +28,11 @@ namespace Colledge.TeacherFolder
 
         public AddStatmentWindow()
         {
-
             InitializeComponent();
-
-            cB = new CBClass();
-
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            cB.RoleCBLoad(RoleCb);
+           // cB.RoleCBLoad(RoleCb);
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
@@ -51,62 +47,18 @@ namespace Colledge.TeacherFolder
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            string pass = PasswordTb.Text;
-            string zagl = "QWERTYUIOPASDFGHJKLZXCVBNM";
-            string mal = "qwertyuiopasdfghjklzxcvbnm";
-            string cif = "123457890";
-            string znak = "!@#$%^&*()_+";
 
-            if (string.IsNullOrWhiteSpace(LoginTb.Text))
-            {
-                MBClass.ErrorMb("Некоректный логин");
-                LoginTb.Focus();
-            }
-            else if (string.IsNullOrWhiteSpace(PasswordTb.Text))
-            {
-                MBClass.ErrorMb("Некоректный пароль");
-                PasswordTb.Focus();
-            }
-            else if (zagl.IndexOfAny(pass.ToCharArray()) == -1)
-            {
-                MBClass.ErrorMb("Пароль должен содержать заглавную букву");
-                PasswordTb.Focus();
-            }
-            else if (mal.IndexOfAny(pass.ToCharArray()) == -1)
-            {
-                MBClass.ErrorMb("Пароль должен содержать маленькую букву");
-                PasswordTb.Focus();
-            }
-            else if (cif.IndexOfAny(pass.ToCharArray()) == -1)
-            {
-                MBClass.ErrorMb("Пароль должен содержать цифру");
-                PasswordTb.Focus();
-            }
-            else if (znak.IndexOfAny(pass.ToCharArray()) == -1)
-            {
-                MBClass.ErrorMb("Пароль должен содержать " +
-                    "один из этих знаков " + znak);
-                PasswordTb.Focus();
-            }
-            else if (RoleCb.SelectedIndex == -1)
-            {
-                MBClass.ErrorMb("Не выбрана роль");
-                RoleCb.Focus();
-            }
-            else
-            {
                 try
                 {
-
                     sqlConnection.Open();
-                    SqlCommand = new SqlCommand($"Insert Into dbo.[TrueUser] " +
-                        "(Login,Password,IDRole) " +
-                        $"Values ('{LoginTb.Text}'," +
-                        $"'{PasswordTb.Text}'," +
-                        $"'{RoleCb.SelectedValue.ToString()}')",
+                    SqlCommand = new SqlCommand($"Insert Into dbo.[statment] " +
+                        "(Discipline,NameStudent,SurnameStudent) " +
+                        $"Values ('{SurnameStudent.Text}'," +
+                        $"'{Discipline.Text}'," +
+                        $"'{NameStudent.Text}'," +
                         sqlConnection);
                     SqlCommand.ExecuteNonQuery();
-                    MBClass.InfoMb($"Пользователь {LoginTb.Text} " + "успешно добавлен");
+                    MBClass.InfoMb("Успешно");
                 }
                 catch (Exception ex)
                 {
@@ -116,7 +68,7 @@ namespace Colledge.TeacherFolder
                 {
                     sqlConnection.Close();
                 }
-            }
+            
         }
 
     }

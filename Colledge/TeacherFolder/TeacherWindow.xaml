@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <Label 
-               Content="Меню администратора" Grid.Column="2" Grid.Row="1"/>
+               Content="Меню Преподователя" Grid.Column="2" Grid.Row="1"/>
         <Menu Grid.Row="3" Grid.Column="1" 
               Grid.ColumnSpan="2">
             <MenuItem x:Name="FileIm" Header="Файл">
@@ -49,18 +49,46 @@
                   Grid.Row="6" Grid.Column="1"
                   Grid.ColumnSpan="2"
                   AutoGenerateColumns="False"
-                  MouseDoubleClick="ListUserDG_MouseDoubleClick">
+                  MouseDoubleClick="ListUserDG_MouseDoubleClick" SelectionChanged="StatementDG_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ п/п"
                                     Binding="{Binding IDUser}"
                                     Width="50"/>
-                <DataGridTextColumn Header="Пароль" 
+                <DataGridTextColumn Header="Имя Дисциплины" 
                                     Binding="{Binding Password}"
                                     Width="*"/>
-                <DataGridTextColumn Header="Логин"
+                <DataGridTextColumn Header="Имя Студента" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Фамилия" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Отчество" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Имя Учителя" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Фамилия Учителя" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Отчество Учителя" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Дата Сдачи" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Год" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+
+                <DataGridTextColumn Header="Симестр" 
+                                    Binding="{Binding Password}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Группа"
                                     Binding="{Binding Login}"
                                     Width="*"/>
-                <DataGridTextColumn Header="Роль"
+                <DataGridTextColumn Header="Оценка"
                                     Binding="{Binding RoleID}"
                                     Width="*"/>
             </DataGrid.Columns>
