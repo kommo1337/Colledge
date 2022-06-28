@@ -24,7 +24,7 @@ namespace Colledge.TeacherFolder
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-QFAG2BJ\SQLEXPRESS;
                                                         Initial Catalog=Colledge;
                                                         Integrated Security=True");
-        SqlCommand SqlCommand;
+        SqlCommand SqlCommand = new SqlCommand();
 
         public AddStatmentWindow()
         {
@@ -51,9 +51,9 @@ namespace Colledge.TeacherFolder
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand = new SqlCommand($"Insert Into dbo.[statment] " +
-                        "(Discipline,NameStudent,SurnameStudent,Semestr,PassDate,NamePrepod,Grade,Group,SurnamePrepod,TherdStudent,TherdNamePrepod,Date) " +
-                        $"Values ('{SurnameStudent.Text}'," +
+                    SqlCommand = new SqlCommand($"Insert Into dbo.[statements] " +
+                        "([Name of Discipline], [Name of Student], [Second Name], Semestr, [Date Of The Pass], [Name of Teacher],Grade, [Group], [Second Name Teacher], [Therd Name],[Therd Name Teacher], Year) " +
+                        $"Values (" +
                         $"'{Discipline.Text}'," +
                         $"'{NameStudent.Text}'," +
                         $"'{SurnameStudent.Text}'," +
@@ -65,9 +65,10 @@ namespace Colledge.TeacherFolder
                         $"'{SurnamePrepod.Text}'," +
                         $"'{TherdStudent.Text}'," +
                         $"'{TherdNamePrepod.Text}'," +
-                        $"'{Date.Text}'," +
+                        $"'{Date.Text}')",
                         sqlConnection);
-                    SqlCommand.ExecuteNonQuery();
+                SqlCommand.Connection = sqlConnection;
+                SqlCommand.ExecuteNonQuery();
                     MBClass.InfoMb("Успешно");
                 }
                 catch (Exception ex)

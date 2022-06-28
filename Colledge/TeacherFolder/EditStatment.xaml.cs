@@ -39,7 +39,7 @@ namespace Colledge.TeacherFolder
                 sqlConnection.Open();
                 SqlCommand =
                     new SqlCommand("Update " +
-                    "dbo.[statment] " +
+                    "dbo.[statments] " +
                     $"Set [Name of Discipline] ='{Discipline.Text}'," +
                     $"[Name of Student]='{NameStudent.Text}'," +
                     $"[Second Name]='{SurnameStudent.Text}'," +

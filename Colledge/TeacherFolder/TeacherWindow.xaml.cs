@@ -28,19 +28,19 @@ namespace Colledge.TeacherFolder
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDG("Select * From dbo.[statment]");
+            dGClass.LoadDG("Select * From dbo.[statements]");
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDG("Select * From dbo.[statment] " +
-                $"Where Name of Discipline Like '%{SearchTb.Text}%' ");
+            dGClass.LoadDG("Select * From dbo.[statements] " +
+                $"Where [Name of Discipline] Like '%{SearchTb.Text}%' ");
         }
 
         private void AddIm_Click(object sender, RoutedEventArgs e)
         {
             new AddStatmentWindow().ShowDialog();
-            dGClass.LoadDG("Select * From dbo.[statment]");
+            dGClass.LoadDG("Select * From dbo.[statements]");
         }
 
         private void ListUserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -55,7 +55,7 @@ namespace Colledge.TeacherFolder
                 {
                     VariableClass.Statment = dGClass.SelectId();
                     new EditStatment().ShowDialog();
-                    dGClass.LoadDG("Select * From dbo.[statment]");
+                    dGClass.LoadDG("Select * From dbo.[statments]");
                 }
                 catch (Exception ex)
                 {

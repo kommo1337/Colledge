@@ -31,7 +31,7 @@ namespace Colledge
                 comboBox.DisplayMemberPath = dataSet.
                     Tables["[Rolee]"].Columns["RoleName"].ToString();
                 comboBox.SelectedValuePath = dataSet.
-                   Tables["[Rolee]"].Columns["[№ p/p]"].ToString();
+                    Tables["[Rolee]"].Columns["№p/p"].ToString();
             }
             catch (Exception ex)
             {

@@ -55,7 +55,7 @@
                                     Binding="{Binding IDUser}"
                                     Width="50"/>
                 <DataGridTextColumn Header="Имя Дисциплины" 
-                                    Binding="{Binding Password}"
+                                    Binding="{Binding Grade}"
                                     Width="*"/>
                 <DataGridTextColumn Header="Имя Студента" 
                                     Binding="{Binding Password}"
